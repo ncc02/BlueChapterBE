@@ -1,5 +1,5 @@
 """
-URL configuration for bluechapter project.
+URL configuration for openmanga project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import upload_image  # Thay 'my_app' bằng tên ứng dụng của bạn
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/upload/', upload_image, name='upload_image'),  # Thêm đường dẫn API mới
 ]
